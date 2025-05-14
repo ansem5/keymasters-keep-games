@@ -308,6 +308,18 @@ class CytusIIGame(Game):
     def has_dlc_marvelous_mix_vol_8(self) -> bool:
         return "Marvelous Mix vol.8" in self.dlc_owned
 
+    @property
+    def has_dlc_cosmic_radio_2024(self) -> bool:
+        return "Cosmic Radio 2024" in self.dlc_owned
+
+    @property
+    def has_dlc_hardcore_tano_c_vol_1(self) -> bool:
+        return "HARDCORE TANO*C VOL.1" in self.dlc_owned
+
+    @property
+    def has_dlc_hardcore_tano_c_vol_2(self) -> bool:
+        return "HARDCORE TANO*C VOL.2" in self.dlc_owned
+
     def difficulties(self) -> List[str]:
         return sorted(self.archipelago_options.cytus_ii_difficulties.value)
 
@@ -1199,6 +1211,36 @@ class CytusIIGame(Game):
             "[Graff.J] 東京Funk",
         ]
 
+    @functools.cached_property
+    def songs_cosmic_radio_2024(self) -> List[str]:
+        return [
+            "[Graff.J] LUNATiC CiRCUiT",
+            "[Graff.J] Synthesis.",
+            "[Graff.J] コズミックファンファーレ!!!!",
+            "[Graff.J] Nya☆ばんちゅーる",
+            "[Graff.J] #Interstellar_Believer",
+        ]
+
+    @functools.cached_property
+    def songs_hardcore_tano_c_vol_1(self) -> List[str]:
+        return [
+            "[NEKO#ΦωΦ] Still Standing Here",
+            "[NEKO#ΦωΦ] DEVASTATION;CODE",
+            "[NEKO#ΦωΦ] GHOSTHVCK",
+            "[NEKO#ΦωΦ] Astral Paradox",
+            "[NEKO#ΦωΦ] Evil Intention",
+        ]
+
+    @functools.cached_property
+    def songs_hardcore_tano_c_vol_2(self) -> List[str]:
+        return [
+            "[NEKO#ΦωΦ] Drive Impact"
+            "[NEKO#ΦωΦ] Midnight Mirage"
+            "[NEKO#ΦωΦ] Phantom Blossom"
+            "[NEKO#ΦωΦ] Transcended Love"
+            "[NEKO#ΦωΦ] Glaring Eyes"
+        ]
+
     def songs(self) -> List[str]:
         songs: List[str] = self.songs_base[:]
 
@@ -1318,6 +1360,12 @@ class CytusIIGame(Game):
             songs.extend(self.songs_initial_g_2nd_stage)
         if self.has_dlc_marvelous_mix_vol_8:
             songs.extend(self.songs_marvelous_mix_vol_8)
+        if self.has_dlc_cosmic_radio_2024:
+            songs.extend(self.songs_cosmic_radio_2024)
+        if self.has_dlc_hardcore_tano_c_vol_1:
+            songs.extend(self.songs_hardcore_tano_c_vol_1)
+        if self.has_dlc_hardcore_tano_c_vol_2:
+            songs.extend(self.songs_hardcore_tano_c_vol_2)
 
         return sorted(songs)
 
@@ -1339,6 +1387,7 @@ class CytusIIDLCOwned(OptionSet):
         "CHUNITHM",
         "Cherry",
         "ConneR",
+        "Cosmic Radio 2024",
         "DEEMO II pt.1",
         "DEEMO II pt.2",
         "DJMAX vol.1",
@@ -1350,6 +1399,8 @@ class CytusIIDLCOwned(OptionSet):
         "Game Disc vol.1",
         "Game Disc vol.2",
         "Hans",
+        "HARDCORE TANO*C vol.1",
+        "HARDCORE TANO*C vol.2",
         "Ilka",
         "Initial G 1st Stage",
         "Initial G 2nd Stage",
