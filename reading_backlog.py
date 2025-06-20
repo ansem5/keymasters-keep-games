@@ -14,8 +14,8 @@ from ..enums import KeymastersKeepGamePlatforms
 
 @dataclass
 class ReadingBacklogArchipelagoOptions:
-    game_backlog_game_selection: ReadingBacklogBookSelection
-    game_backlog_actions: ReadingBacklogActions
+    reading_backlog_game_selection: ReadingBacklogBookSelection
+    reading_backlog_actions: ReadingBacklogActions
 
 
 class ReadingBacklogGame(Game):
@@ -31,7 +31,7 @@ class ReadingBacklogGame(Game):
     def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
         return list()
 
-    def reading_objective_templates(self) -> List[ReadingObjectiveTemplate]:
+    def game_objective_templates(self) -> List[Game ObjectiveTemplate]:
         return [
             ReadingObjectiveTemplate(
                 label="ACTION BOOK",
