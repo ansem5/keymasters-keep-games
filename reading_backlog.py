@@ -31,7 +31,7 @@ class ReadingBacklogGame(Game):
     def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
         return list()
 
-    def game_objective_templates(self) -> List[Game ObjectiveTemplate]:
+    def game_objective_templates(self) -> List[GameObjectiveTemplate]:
         return [
             GameObjectiveTemplate(
                 label="ACTION BOOK",
