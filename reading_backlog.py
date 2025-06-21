@@ -33,7 +33,7 @@ class ReadingBacklogGame(Game):
 
     def game_objective_templates(self) -> List[Game ObjectiveTemplate]:
         return [
-            ReadingObjectiveTemplate(
+            GameObjectiveTemplate(
                 label="ACTION BOOK",
                 data={"ACTION": (self.actions, 1), "BOOK": (self.books, 1)},
                 is_time_consuming=True,
