@@ -45,7 +45,7 @@ class ReadingBacklogGame(Game):
     def actions(self) -> List[str]:
         return sorted(self.archipelago_options.reading_backlog_actions.value)
 
-    def games(self) -> List[str]:
+    def books(self) -> List[str]:
         return sorted(self.archipelago_options.reading_backlog_game_selection.value)
 
 
