@@ -319,6 +319,30 @@ class CytusIIGame(Game):
     @property
     def has_dlc_hardcore_tano_c_vol_2(self) -> bool:
         return "HARDCORE TANO*C VOL.2" in self.dlc_owned
+        
+    @property
+    def has_dlc_stream_palette_selection(self) -> bool:
+        return "Stream Palette Selection" in self.dlc_owned
+
+    @property
+    def has_dlc_ad_house_selection(self) -> bool:
+        return "AD: House Selection" in self.dlc_owned
+
+    @property
+    def has_dlc_rotaeno(self) -> bool:
+        return "Rotaeno" in self.dlc_owned
+
+    @property
+    def has_dlc_phigros(self) -> bool:
+        return "Phigros" in self.dlc_owned
+
+    @property
+    def has_dlc_lantis_selection(self) -> bool:
+        return "Lantis Selection" in self.dlc_owned
+
+    @property
+    def has_dlc_cosmic_radio_2025(self) -> bool:
+        retern "Cosmic Radio 2025" in self.dlc_owned        
 
     def difficulties(self) -> List[str]:
         return sorted(self.archipelago_options.cytus_ii_difficulties.value)
@@ -391,6 +415,9 @@ class CytusIIGame(Game):
             "[NEKO#ΦωΦ] Zealous Hearts (Rayark Edit)",
             "[NEKO#ΦωΦ] 気楽なCloudy",
             "[NEKO#ΦωΦ] 響け！",
+            "[NEKO#ΦωΦ] BATTLE NO.1",
+            "[NEKO#ΦωΦ] Big Daddy",
+            "[NEKO#ΦωΦ] Σ",
             "[ROBO_Head] Urgency",
             "[ROBO_Head] Contact",
             "[ROBO_Head] Devillic Sphere",
@@ -409,6 +436,8 @@ class CytusIIGame(Game):
             "[ROBO_Head] Luolimasi",
             "[ROBO_Head] Restriction",
             "[ROBO_Head] Deadly Slot Game",
+            "[ROBO_Head] SHOWCASE",
+            "[ROBO_Head] digitAl pun[K]",
             "[Ivy] Dystopia",
             "[Ivy] Heroic Age",
             "[Ivy] UTOPIA",
@@ -432,6 +461,8 @@ class CytusIIGame(Game):
             "[Ivy] Alexandrite",
             "[Ivy] Sentimental Journey",
             "[Ivy] Reset",
+            "[Ivy] Nadir",
+            "[Ivy] Saudade (Short Version)",
             "[Crystal PuNK] Chandelier XIII",
             "[Crystal PuNK] Collide",
             "[Crystal PuNK] Dark Madness",
@@ -498,6 +529,10 @@ class CytusIIGame(Game):
             "[Graff.J (Voez)] popotnik ~The Traveller of Ljubljana",
             "[Graff.J (Voez)] Ascension to Heaven",
             "[Graff.J (Voez)] Lifill",
+            "[Graff.J] The Wind Of Summer",
+            "[Graff.J] summer love",
+            "[Graff.J] amethyst",
+            "[Graff.J] Leave All Behind",
             "[Vanessa] Cocytus",
             "[Vanessa] Used to be",
             "[Graff.J] Go Adventure!",
@@ -1234,13 +1269,73 @@ class CytusIIGame(Game):
     @functools.cached_property
     def songs_hardcore_tano_c_vol_2(self) -> List[str]:
         return [
-            "[NEKO#ΦωΦ] Drive Impact"
-            "[NEKO#ΦωΦ] Midnight Mirage"
-            "[NEKO#ΦωΦ] Phantom Blossom"
-            "[NEKO#ΦωΦ] Transcended Love"
-            "[NEKO#ΦωΦ] Glaring Eyes"
+            "[NEKO#ΦωΦ] Drive Impact",
+            "[NEKO#ΦωΦ] Midnight Mirage",
+            "[NEKO#ΦωΦ] Phantom Blossom",
+            "[NEKO#ΦωΦ] Transcended Love",
+            "[NEKO#ΦωΦ] Glaring Eyes",
+        ]
+        
+    @functools.cached_property
+    def songs_stream_pallette_selection(self) -> List[str]:
+        return [
+            "[NEKO#ΦωΦ] Bring Me Back",
+            "[NEKO#ΦωΦ] Cloud Rider",
+            "[NEKO#ΦωΦ] Fracture (Cytus II Edit)",
+            "[NEKO#ΦωΦ] Keep Trying (Cytus II Edit)",
+            "[NEKO#ΦωΦ] Control",
+        ]
+        
+    @functools.cached_property
+    def songs_ad_house_selection(self) -> List[str]:
+        return [
+            "[Graff.J (Ad: House Selection)] Feel My Love",
+            "[Graff.J (Ad: House Selection)] Hakumei in the Hill",
+            "[Paff] Change Everything",
+            "[Paff] Lemonade Fizz",
+            "[Paff] Losing My Mind",
         ]
 
+    @functools.cached_property
+    def songs_rotaeno(self) -> List[str]:
+        return [
+            "[Graff.J (Rotaeno)] Deus Judicium",
+            "[Graff.J (Rotaeno)] MVURBD",
+            "[Graff.J (Rotaeno)] シークレット・プラネット",
+            "[Graff.J (Rotaeno)] Uchronia",
+            "[Graff.J (Rotaeno)] 翠杜",
+        ]   
+         
+    @functools.cached_property
+    def songs_phigros(self) -> List[str]:
+        return [
+            "[Graff.J (Phigros)] Luminescence",
+            "[Graff.J (Phigros)] Distorted Fate",
+            "[Graff.J (Phigros)] Igallta",
+            "[Graff.J (Phigros)] Rrhar'il",
+            "[Graff.J (Phigros)] The Chariot ~REVIIVAL~",
+        ]
+        
+    @functools.cached_property
+    def songs_lantis_selection(self) -> List[str]:
+        return [
+            "[Graff.J (Lantis)] Sincerely",
+            "[Graff.J (Lantis)] トゥッティ！",
+            "[Graff.J (Lantis)] God Knows...",
+            "[Graff.J (Lantis)] Like Flames",
+            "[Graff.J (Lantis)] シカ色デイズ",
+        ]
+        
+    @functools.cached_property
+    def songs_cosmic_radio_2025(self) -> List[str]:
+        return [
+            "[Ivy] 溟海のzodiac",
+            "[Ivy] Λrkhe (Game Edit)",
+            "[Graff.J (Cosmic Radio)] Pick your poison!",
+            "[Graff.J (Cosmic Radio)] アンビバレンツ・ノート",
+            "[Bo Bo] 森奥虚跡",
+        ]            
+        
     def songs(self) -> List[str]:
         songs: List[str] = self.songs_base[:]
 
@@ -1366,6 +1461,18 @@ class CytusIIGame(Game):
             songs.extend(self.songs_hardcore_tano_c_vol_1)
         if self.has_dlc_hardcore_tano_c_vol_2:
             songs.extend(self.songs_hardcore_tano_c_vol_2)
+        if self.has_dlc_stream_palette_selection:
+            songs.extend(self.songs_stream_pallette_selection)
+        if self.has_dlc_ad_house_selection:
+            songs.extend(self.songs_ad_house_selection)
+        if self.has_dlc_rotaeno:
+            songs.extend(self.songs_rotaeno)
+        if self.has_dlc_phigros:
+            songs.extend(self.songs_phigros)
+        if self.has_dlc_lantis_selection:
+            songs.extend(self.songs_lantis_selection)
+        if self.has_dlc_cosmic_radio_2025:
+            songs.extend(self.songs_cosmic_radio_2025)            
 
         return sorted(songs)
 
@@ -1439,6 +1546,11 @@ class CytusIIDLCOwned(OptionSet):
         "Sagar",
         "Tairitsu",
         "Xenon",
+        "Stream Palette Selection",
+        "AD: House Selection",
+        "Rotaeno",
+        "Phigros",
+        "Lantis Selection",
     ]
 
     default = valid_keys
