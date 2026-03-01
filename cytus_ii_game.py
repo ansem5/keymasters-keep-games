@@ -342,7 +342,7 @@ class CytusIIGame(Game):
 
     @property
     def has_dlc_cosmic_radio_2025(self) -> bool:
-        retern "Cosmic Radio 2025" in self.dlc_owned        
+        return "Cosmic Radio 2025" in self.dlc_owned        
 
     def difficulties(self) -> List[str]:
         return sorted(self.archipelago_options.cytus_ii_difficulties.value)
